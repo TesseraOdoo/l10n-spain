@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_l10n_es_deca_document_user,l10n_es.deca.document stock user,model_l10n_es_deca_document,stock.group_stock_user,1,0,1,0
+access_l10n_es_deca_document_manager,l10n_es.deca.document stock manager,model_l10n_es_deca_document,stock.group_stock_manager,1,0,1,1
+access_l10n_es_deca_update_user,l10n_es.deca.update stock user,model_l10n_es_deca_update,stock.group_stock_user,1,1,1,1

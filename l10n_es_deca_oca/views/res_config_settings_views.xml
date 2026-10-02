@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2026 Abraham Anes - abraham@tesseratech.es
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html). -->
+<odoo>
+    <record id="res_config_settings_view_form_inherit_deca" model="ir.ui.view">
+        <field name="name">res.config.settings.form.inherit.l10n_es_deca_oca</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="stock.res_config_settings_view_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//block[@name='shipping_setting_container']" position="inside">
+                <setting
+                    id="deca_settings"
+                    string="DeCA (Spain)"
+                    company_dependent="1"
+                    help="Electronic administrative control document for road freight transport. The QR code of the document points to a public URL of this server, so the base URL must be public and served over HTTPS."
+                >
+                    <div class="content-group">
+                        <div class="row mt8">
+                            <field name="deca_auto_issue" class="col-1" />
+                            <label
+                                for="deca_auto_issue"
+                                class="col-lg-8 o_light_label"
+                            />
+                        </div>
+                        <div class="row mt8">
+                            <label
+                                for="deca_goods_description"
+                                class="col-lg-6 o_light_label"
+                            />
+                            <field name="deca_goods_description" class="col-lg-6" />
+                        </div>
+                        <div class="row mt8">
+                            <label
+                                for="deca_download_expiry_days"
+                                class="col-lg-6 o_light_label"
+                            />
+                            <field name="deca_download_expiry_days" class="col-lg-2" />
+                        </div>
+                    </div>
+                </setting>
+            </xpath>
+        </field>
+    </record>
+</odoo>

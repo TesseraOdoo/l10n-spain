@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2026 Abraham Anes - abraham@tesseratech.es
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html). -->
+<odoo>
+    <record id="view_picking_form_inherit_deca" model="ir.ui.view">
+        <field name="name">stock.picking.form.inherit.l10n_es_deca_oca</field>
+        <field name="model">stock.picking</field>
+        <field name="inherit_id" ref="stock.view_picking_form" />
+        <field name="arch" type="xml">
+            <xpath expr="/form/header/button[last()]" position="after">
+                <button
+                    name="action_deca_issue"
+                    type="object"
+                    string="Issue DeCA"
+                    groups="stock.group_stock_user"
+                    invisible="not deca_required or state in ('draft', 'cancel') or deca_state == 'issued'"
+                />
+                <button
+                    name="%(l10n_es_deca_oca.action_l10n_es_deca_update)d"
+                    type="action"
+                    string="Update DeCA"
+                    groups="stock.group_stock_user"
+                    invisible="state == 'cancel' or deca_state != 'issued'"
+                />
+            </xpath>
+            <xpath expr="//div[@name='button_box']" position="inside">
+                <button
+                    name="action_deca_view_documents"
+                    type="object"
+                    class="oe_stat_button"
+                    icon="fa-file-text-o"
+                    invisible="deca_document_count == 0"
+                >
+                    <field name="deca_document_count" widget="statinfo" string="DeCA" />
+                </button>
+            </xpath>
+            <xpath expr="//sheet" position="before">
+                <div
+                    class="alert alert-warning mb-0"
+                    role="alert"
+                    invisible="not deca_required or deca_state == 'issued' or state == 'cancel'"
+                >
+                    This delivery requires a DeCA that has not been issued yet. The driver must carry it, with its QR code, before the transport starts.
+                </div>
+            </xpath>
+            <xpath expr="//group[@name='carrier_data']" position="inside">
+                <field
+                    name="deca_required"
+                    invisible="picking_type_code != 'outgoing'"
+                />
+            </xpath>
+            <xpath expr="//page[@name='extra']" position="after">
+                <page name="deca" string="DeCA" invisible="not deca_required">
+                    <group>
+                        <group name="deca_transport" string="Transport">
+                            <field
+                                name="deca_carrier_partner_id"
+                                readonly="deca_state == 'issued'"
+                            />
+                            <field
+                                name="deca_driver_name"
+                                readonly="deca_state == 'issued'"
+                            />
+                            <field
+                                name="deca_vehicle_plate"
+                                readonly="deca_state == 'issued'"
+                            />
+                            <field
+                                name="deca_trailer_plate"
+                                readonly="deca_state == 'issued'"
+                            />
+                        </group>
+                        <group name="deca_goods" string="Goods and document">
+                            <field
+                                name="deca_goods_description"
+                                readonly="deca_state == 'issued'"
+                            />
+                            <field
+                                name="deca_gross_weight"
+                                readonly="deca_state == 'issued'"
+                            />
+                            <field name="deca_state" />
+                            <field
+                                name="deca_url"
+                                widget="CopyClipboardChar"
+                                invisible="not deca_url"
+                            />
+                        </group>
+                    </group>
+                    <group>
+                        <field
+                            name="deca_special_authorization"
+                            readonly="deca_state == 'issued'"
+                        />
+                        <field name="deca_notes" readonly="deca_state == 'issued'" />
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="vpicktree_inherit_deca" model="ir.ui.view">
+        <field name="name">stock.picking.list.inherit.l10n_es_deca_oca</field>
+        <field name="model">stock.picking</field>
+        <field name="inherit_id" ref="stock.vpicktree" />
+        <field name="arch" type="xml">
+            <field name="state" position="before">
+                <field name="deca_state" optional="hide" />
+            </field>
+        </field>
+    </record>
+
+    <record id="view_picking_internal_search_inherit_deca" model="ir.ui.view">
+        <field name="name">stock.picking.search.inherit.l10n_es_deca_oca</field>
+        <field name="model">stock.picking</field>
+        <field name="inherit_id" ref="stock.view_picking_internal_search" />
+        <field name="arch" type="xml">
+            <filter name="internal" position="after">
+                <separator />
+                <filter
+                    name="deca_pending"
+                    string="DeCA pending"
+                    domain="[('deca_required', '=', True), ('deca_state', '=', 'none'), ('state', 'not in', ('draft', 'cancel'))]"
+                />
+                <filter
+                    name="deca_issued"
+                    string="DeCA issued"
+                    domain="[('deca_state', '=', 'issued')]"
+                />
+            </filter>
+        </field>
+    </record>
+</odoo>

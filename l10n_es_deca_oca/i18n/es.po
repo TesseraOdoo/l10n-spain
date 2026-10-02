@@ -1,0 +1,631 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* l10n_es_deca_oca
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-01 17:40+0000\n"
+"PO-Revision-Date: 2026-10-01 17:40+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. module: l10n_es_deca_oca
+#. odoo-python
+#: code:addons/l10n_es_deca_oca/models/stock_picking.py:0
+msgid "%(picking)s: %(fields)s"
+msgstr "%(picking)s: %(fields)s"
+
+#. module: l10n_es_deca_oca
+#. odoo-python
+#: code:addons/l10n_es_deca_oca/models/stock_picking.py:0
+msgid ""
+"%(picking)s: the DeCA is already issued, use the update wizard to state the "
+"reason of the change."
+msgstr "%(picking)s: el DeCA ya está emitido, use el asistente de actualización para indicar el motivo del cambio."
+
+#. module: l10n_es_deca_oca
+#: model:ir.actions.report,print_report_name:l10n_es_deca_oca.action_report_deca
+msgid "'DeCA - %s' % (object.name)"
+msgstr "'DeCA - %s' % (object.name)"
+
+#. module: l10n_es_deca_oca
+#: model:ir.model.constraint,message:l10n_es_deca_oca.constraint_l10n_es_deca_document_picking_version_unique
+msgid "A DeCA version number can only be used once per transfer."
+msgstr "Un número de versión de DeCA solo puede usarse una vez por albarán."
+
+#. module: l10n_es_deca_oca
+#: model_terms:ir.ui.view,arch_db:l10n_es_deca_oca.view_l10n_es_deca_update_form
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: l10n_es_deca_oca
+#: model:ir.model.fields,field_description:l10n_es_deca_oca.field_l10n_es_deca_document__carrier_address
+msgid "Carrier Address"
+msgstr "Dirección del transportista"
+
+#. module: l10n_es_deca_oca
+#: model:ir.model.fields,field_description:l10n_es_deca_oca.field_l10n_es_deca_document__carrier_name
+msgid "Carrier Name"
+msgstr "Nombre del transportista"
+
+#. module: l10n_es_deca_oca
+#: model:ir.model.fields,field_description:l10n_es_deca_oca.field_l10n_es_deca_document__carrier_vat
+msgid "Carrier Vat"
+msgstr "NIF del transportista"
+
+#. module: l10n_es_deca_oca
+#: model:ir.model.fields,field_description:l10n_es_deca_oca.field_l10n_es_deca_document__change_reason
+msgid "Change Reason"
+msgstr "Motivo del cambio"
+
+#. module: l10n_es_deca_oca
+#: model:ir.model,name:l10n_es_deca_oca.model_res_company
+msgid "Companies"
+msgstr "Compañías"
+
+#. module: l10n_es_deca_oca
+#: model:ir.model.fields,field_description:l10n_es_deca_oca.field_l10n_es_deca_document__company_id
+msgid "Company"
+msgstr "Compañía"
+
+#. module: l10n_es_deca_oca
+#. odoo-python
+#: code:addons/l10n_es_deca_oca/models/stock_picking.py:0
+msgid "Company VAT"
+msgstr "NIF de la compañía"
+
+#. module: l10n_es_deca_oca
+#. odoo-python
+#: code:addons/l10n_es_deca_oca/models/stock_picking.py:0
+msgid "Company address"
+msgstr "Dirección de la compañía"
+
+#. module: l10n_es_deca_oca
+#: model:ir.model,name:l10n_es_deca_oca.model_res_config_settings
+msgid "Config Settings"
+msgstr "Opciones de configuración"
+
+#. module: l10n_es_deca_oca
+#: model_terms:ir.ui.view,arch_db:l10n_es_deca_oca.view_l10n_es_deca_document_form
+msgid "Contractual shipper"
+msgstr "Cargador contractual"
+
+#. module: l10n_es_deca_oca
+#: model:ir.model.fields,field_description:l10n_es_deca_oca.field_l10n_es_deca_document__create_uid
+#: model:ir.model.fields,field_description:l10n_es_deca_oca.field_l10n_es_deca_update__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: l10n_es_deca_oca
+#: model:ir.model.fields,field_description:l10n_es_deca_oca.field_l10n_es_deca_document__create_date
+#: model:ir.model.fields,field_description:l10n_es_deca_oca.field_l10n_es_deca_update__create_date
+msgid "Created on"
+msgstr "Creado el"
+
+#. module: l10n_es_deca_oca
+#: model:ir.model.fields,field_description:l10n_es_deca_oca.field_stock_picking__deca_current_document_id
+msgid "Current DeCA version"
+msgstr "Versión vigente del DeCA"
+
+#. module: l10n_es_deca_oca
+#: model:ir.model.fields,help:l10n_es_deca_oca.field_res_company__deca_download_expiry_days
+#: model:ir.model.fields,help:l10n_es_deca_oca.field_res_config_settings__deca_download_expiry_days
+msgid ""
+"Days after the delivery is done during which the DeCA can still be "
+"downloaded from its QR code. The regulation allows disabling the download "
+"seven calendar days after the end of the service. Set 0 to keep the download"
+" always available."
+msgstr "Días tras la entrega durante los que el DeCA sigue pudiendo descargarse desde su código QR. La normativa permite desactivar la descarga siete días naturales después de finalizar el servicio. Indique 0 para mantener la descarga siempre disponible."
+
+#. module: l10n_es_deca_oca
+#: model:ir.actions.report,name:l10n_es_deca_oca.action_report_deca
+#: model_terms:ir.ui.view,arch_db:l10n_es_deca_oca.view_picking_form_inherit_deca
+#: model_terms:ir.ui.view,arch_db:l10n_es_deca_oca.view_picking_type_form_inherit_deca
+msgid "DeCA"
+msgstr "DeCA"
+
+#. module: l10n_es_deca_oca
+#: model_terms:ir.ui.view,arch_db:l10n_es_deca_oca.res_config_settings_view_form_inherit_deca
+msgid "DeCA (Spain)"
+msgstr "DeCA (España)"
+
+#. module: l10n_es_deca_oca
+#: model:ir.model.fields,field_description:l10n_es_deca_oca.field_stock_picking__deca_access_token
+msgid "DeCA access token"
+msgstr "Token de acceso del DeCA"
+
+#. module: l10n_es_deca_oca
+#: model:ir.model.fields,field_description:l10n_es_deca_oca.field_stock_picking__deca_url
+msgid "DeCA download URL"
+msgstr "URL de descarga del DeCA"
+
+#. module: l10n_es_deca_oca
+#: model:ir.model.fields,field_description:l10n_es_deca_oca.field_res_company__deca_download_expiry_days
+#: model:ir.model.fields,field_description:l10n_es_deca_oca.field_res_config_settings__deca_download_expiry_days
+msgid "DeCA download period (days)"
+msgstr "Plazo de descarga del DeCA (días)"
+
+#. module: l10n_es_deca_oca
+#: model_terms:ir.ui.view,arch_db:l10n_es_deca_oca.view_picking_internal_search_inherit_deca
+msgid "DeCA issued"
+msgstr "DeCA emitido"
+
+#. module: l10n_es_deca_oca
+#: model:ir.model.fields,field_description:l10n_es_deca_oca.field_l10n_es_deca_update__deca_notes
+#: model:ir.model.fields,field_description:l10n_es_deca_oca.field_stock_picking__deca_notes
+msgid "DeCA observations"
+msgstr "Observaciones del DeCA"
+
+#. module: l10n_es_deca_oca
+#: model_terms:ir.ui.view,arch_db:l10n_es_deca_oca.view_picking_internal_search_inherit_deca
+msgid "DeCA pending"
+msgstr "DeCA pendiente"
+
+#. module: l10n_es_deca_oca
+#: model:ir.model.fields,field_description:l10n_es_deca_oca.field_stock_picking__deca_required
+#: model:ir.model.fields,field_description:l10n_es_deca_oca.field_stock_picking_type__deca_required
+msgid "DeCA required"
+msgstr "Requiere DeCA"
+
+#. module: l10n_es_deca_oca
+#: model:ir.model.fields,field_description:l10n_es_deca_oca.field_stock_picking__deca_state
+msgid "DeCA status"
+msgstr "Estado del DeCA"
+
+#. module: l10n_es_deca_oca
+#: model:ir.model,name:l10n_es_deca_oca.model_l10n_es_deca_document
+msgid "DeCA version"
+msgstr "Versión del DeCA"
+
+#. module: l10n_es_deca_oca
+#: model:ir.actions.act_window,name:l10n_es_deca_oca.action_l10n_es_deca_document
+#: model:ir.model.fields,field_description:l10n_es_deca_oca.field_stock_picking__deca_document_ids
+#: model:ir.ui.menu,name:l10n_es_deca_oca.menu_l10n_es_deca_document
+msgid "DeCA versions"
+msgstr "Versiones DeCA"
+
+#. module: l10n_es_deca_oca
+#: model:ir.model.fields,field_description:l10n_es_deca_oca.field_stock_picking__deca_document_count
+msgid "Deca Document Count"
+msgstr "Número de versiones DeCA"
+
+#. module: l10n_es_deca_oca
+#: model:ir.model.fields,field_description:l10n_es_deca_oca.field_res_company__deca_goods_description
+#: model:ir.model.fields,field_description:l10n_es_deca_oca.field_res_config_settings__deca_goods_description
+msgid "Default nature of the goods"
+msgstr "Naturaleza de la mercancía por defecto"
+
+#. module: l10n_es_deca_oca
+#. odoo-python
+#: code:addons/l10n_es_deca_oca/models/stock_picking.py:0
+msgid "Delivery address"
+msgstr "Dirección de entrega"
+
+#. module: l10n_es_deca_oca
+#. odoo-python
+#: code:addons/l10n_es_deca_oca/models/stock_picking.py:0
+msgid "Delivery validated"
+msgstr "Albarán validado"
+
+#. module: l10n_es_deca_oca
+#: model_terms:ir.ui.view,arch_db:l10n_es_deca_oca.view_l10n_es_deca_document_form
+msgid "Destination"
+msgstr "Destino"
+
+#. module: l10n_es_deca_oca
+#: model:ir.model.fields,field_description:l10n_es_deca_oca.field_l10n_es_deca_document__destination_address
+msgid "Destination Address"
+msgstr "Dirección de destino"
+
+#. module: l10n_es_deca_oca
+#: model:ir.model.fields,field_description:l10n_es_deca_oca.field_l10n_es_deca_document__destination_name
+msgid "Destination Name"
+msgstr "Nombre del destinatario"
+
+#. module: l10n_es_deca_oca
+#: model:ir.model.fields,field_description:l10n_es_deca_oca.field_l10n_es_deca_document__display_name
+#: model:ir.model.fields,field_description:l10n_es_deca_oca.field_l10n_es_deca_update__display_name
+msgid "Display Name"
+msgstr "Nombre mostrado"
+
+#. module: l10n_es_deca_oca
+#: model:ir.model.fields,field_description:l10n_es_deca_oca.field_l10n_es_deca_update__deca_driver_name
+#: model:ir.model.fields,field_description:l10n_es_deca_oca.field_stock_picking__deca_driver_name
+msgid "Driver"
+msgstr "Conductor"
+
+#. module: l10n_es_deca_oca
+#: model:ir.model.fields,field_description:l10n_es_deca_oca.field_l10n_es_deca_document__driver_name
+msgid "Driver Name"
+msgstr "Conductor"
+
+#. module: l10n_es_deca_oca
+#. odoo-python
+#: code:addons/l10n_es_deca_oca/models/stock_picking.py:0
+#: model:ir.model.fields,field_description:l10n_es_deca_oca.field_l10n_es_deca_update__deca_carrier_partner_id
+#: model:ir.model.fields,field_description:l10n_es_deca_oca.field_stock_picking__deca_carrier_partner_id
+#: model_terms:ir.ui.view,arch_db:l10n_es_deca_oca.view_l10n_es_deca_document_form
+msgid "Effective carrier"
+msgstr "Transportista efectivo"
+
+#. module: l10n_es_deca_oca
+#. odoo-python
+#: code:addons/l10n_es_deca_oca/models/stock_picking.py:0
+msgid "Effective carrier VAT"
+msgstr "NIF del transportista efectivo"
+
+#. module: l10n_es_deca_oca
+#: model_terms:ir.ui.view,arch_db:l10n_es_deca_oca.res_config_settings_view_form_inherit_deca
+msgid ""
+"Electronic administrative control document for road freight transport. The "
+"QR code of the document points to a public URL of this server, so the base "
+"URL must be public and served over HTTPS."
+msgstr "Documento electrónico de control administrativo del transporte de mercancías por carretera. El código QR del documento apunta a una URL pública de este servidor, por lo que la URL base debe ser pública y servirse por HTTPS."
+
+#. module: l10n_es_deca_oca
+#: model_terms:ir.actions.act_window,help:l10n_es_deca_oca.action_l10n_es_deca_document
+msgid ""
+"Every issue of a DeCA keeps an immutable copy of the data printed on it."
+msgstr "Cada emisión de un DeCA conserva una copia inmutable de los datos impresos en él."
+
+#. module: l10n_es_deca_oca
+#: model:ir.model.fields,help:l10n_es_deca_oca.field_l10n_es_deca_document__attachment_id
+msgid ""
+"File issued for this version. It must be kept for at least one year and "
+"cannot be deleted while the version exists."
+msgstr "Fichero emitido para esta versión. Debe conservarse al menos un año y no puede borrarse mientras exista la versión."
+
+#. module: l10n_es_deca_oca
+#: model_terms:ir.ui.view,arch_db:l10n_es_deca_oca.view_l10n_es_deca_document_form
+msgid "Goods"
+msgstr "Mercancía"
+
+#. module: l10n_es_deca_oca
+#: model:ir.model.fields,field_description:l10n_es_deca_oca.field_l10n_es_deca_document__goods_description
+msgid "Goods Description"
+msgstr "Naturaleza de la mercancía"
+
+#. module: l10n_es_deca_oca
+#: model_terms:ir.ui.view,arch_db:l10n_es_deca_oca.view_picking_form_inherit_deca
+msgid "Goods and document"
+msgstr "Mercancía y documento"
+
+#. module: l10n_es_deca_oca
+#. odoo-python
+#: code:addons/l10n_es_deca_oca/models/stock_picking.py:0
+msgid "Gross weight"
+msgstr "Peso bruto"
+
+#. module: l10n_es_deca_oca
+#: model:ir.model.fields,field_description:l10n_es_deca_oca.field_l10n_es_deca_document__gross_weight
+#: model:ir.model.fields,field_description:l10n_es_deca_oca.field_l10n_es_deca_update__deca_gross_weight
+#: model:ir.model.fields,field_description:l10n_es_deca_oca.field_stock_picking__deca_gross_weight
+msgid "Gross weight (kg)"
+msgstr "Peso bruto (kg)"
+
+#. module: l10n_es_deca_oca
+#: model:ir.model.fields,help:l10n_es_deca_oca.field_stock_picking__deca_gross_weight
+msgid ""
+"Gross weight printed on the DeCA. If empty, the weight for shipping of the "
+"transfer is used, which Odoo recomputes from the validated quantities and "
+"packages."
+msgstr "Peso bruto que se imprime en el DeCA. Si se deja vacío se usa el peso para envío del albarán, que Odoo recalcula a partir de las cantidades validadas y los paquetes."
+
+#. module: l10n_es_deca_oca
+#: model_terms:ir.ui.view,arch_db:l10n_es_deca_oca.view_l10n_es_deca_document_search
+msgid "Group By"
+msgstr "Agrupar por"
+
+#. module: l10n_es_deca_oca
+#: model:ir.model.fields,help:l10n_es_deca_oca.field_stock_picking__deca_carrier_partner_id
+msgid ""
+"Holder of the transport authorisation that actually carries the goods. "
+"Proposed from the transporter of the shipping method."
+msgstr "Titular de la autorización de transporte que realiza efectivamente el transporte. Se propone a partir del transportista del método de envío."
+
+#. module: l10n_es_deca_oca
+#: model:ir.model.fields,field_description:l10n_es_deca_oca.field_l10n_es_deca_document__id
+#: model:ir.model.fields,field_description:l10n_es_deca_oca.field_l10n_es_deca_update__id
+msgid "ID"
+msgstr "ID"
+
+#. module: l10n_es_deca_oca
+#: model:ir.model.fields,field_description:l10n_es_deca_oca.field_l10n_es_deca_document__is_current
+msgid "Is Current"
+msgstr "Es la vigente"
+
+#. module: l10n_es_deca_oca
+#: model_terms:ir.ui.view,arch_db:l10n_es_deca_oca.view_picking_form_inherit_deca
+msgid "Issue DeCA"
+msgstr "Emitir DeCA"
+
+#. module: l10n_es_deca_oca
+#: model:ir.model.fields,field_description:l10n_es_deca_oca.field_l10n_es_deca_document__date
+#: model_terms:ir.ui.view,arch_db:l10n_es_deca_oca.view_l10n_es_deca_document_search
+msgid "Issue date"
+msgstr "Fecha de emisión"
+
+#. module: l10n_es_deca_oca
+#: model_terms:ir.ui.view,arch_db:l10n_es_deca_oca.view_l10n_es_deca_update_form
+msgid "Issue new version"
+msgstr "Emitir nueva versión"
+
+#. module: l10n_es_deca_oca
+#: model:ir.model.fields,help:l10n_es_deca_oca.field_res_company__deca_auto_issue
+#: model:ir.model.fields,help:l10n_es_deca_oca.field_res_config_settings__deca_auto_issue
+msgid ""
+"Issue the DeCA automatically when a delivery that requires it is validated. "
+"The validation fails if mandatory DeCA data is missing."
+msgstr "Emite el DeCA automáticamente al validar un albarán que lo requiera. La validación falla si faltan datos obligatorios del DeCA."
+
+#. module: l10n_es_deca_oca
+#: model:ir.model.fields,field_description:l10n_es_deca_oca.field_res_company__deca_auto_issue
+#: model:ir.model.fields,field_description:l10n_es_deca_oca.field_res_config_settings__deca_auto_issue
+msgid "Issue the DeCA on validation"
+msgstr "Emitir el DeCA al validar"
+
+#. module: l10n_es_deca_oca
+#: model:ir.model.fields.selection,name:l10n_es_deca_oca.selection__stock_picking__deca_state__issued
+msgid "Issued"
+msgstr "Emitido"
+
+#. module: l10n_es_deca_oca
+#: model:ir.model.fields,field_description:l10n_es_deca_oca.field_l10n_es_deca_document__user_id
+msgid "Issued by"
+msgstr "Emitido por"
+
+#. module: l10n_es_deca_oca
+#: model:ir.model.fields,field_description:l10n_es_deca_oca.field_l10n_es_deca_document__write_uid
+#: model:ir.model.fields,field_description:l10n_es_deca_oca.field_l10n_es_deca_update__write_uid
+msgid "Last Updated by"
+msgstr "Última actualización por"
+
+#. module: l10n_es_deca_oca
+#: model:ir.model.fields,field_description:l10n_es_deca_oca.field_l10n_es_deca_document__write_date
+#: model:ir.model.fields,field_description:l10n_es_deca_oca.field_l10n_es_deca_update__write_date
+msgid "Last Updated on"
+msgstr "Última actualización el"
+
+#. module: l10n_es_deca_oca
+#: model:ir.model.fields,field_description:l10n_es_deca_oca.field_l10n_es_deca_update__deca_goods_description
+#: model:ir.model.fields,field_description:l10n_es_deca_oca.field_stock_picking__deca_goods_description
+msgid "Nature of the goods"
+msgstr "Naturaleza de la mercancía"
+
+#. module: l10n_es_deca_oca
+#: model_terms:ir.actions.act_window,help:l10n_es_deca_oca.action_l10n_es_deca_document
+msgid "No DeCA issued yet"
+msgstr "Todavía no se ha emitido ningún DeCA"
+
+#. module: l10n_es_deca_oca
+#: model:ir.model.fields.selection,name:l10n_es_deca_oca.selection__stock_picking__deca_state__none
+msgid "Not issued"
+msgstr "No emitido"
+
+#. module: l10n_es_deca_oca
+#: model:ir.model.fields,field_description:l10n_es_deca_oca.field_l10n_es_deca_document__notes
+msgid "Notes"
+msgstr "Observaciones"
+
+#. module: l10n_es_deca_oca
+#: model_terms:ir.ui.view,arch_db:l10n_es_deca_oca.view_l10n_es_deca_document_form
+msgid "Origin"
+msgstr "Origen"
+
+#. module: l10n_es_deca_oca
+#: model:ir.model.fields,field_description:l10n_es_deca_oca.field_l10n_es_deca_document__origin_address
+msgid "Origin Address"
+msgstr "Dirección de origen"
+
+#. module: l10n_es_deca_oca
+#. odoo-python
+#: code:addons/l10n_es_deca_oca/models/stock_picking.py:0
+msgid "Origin address"
+msgstr "Dirección de origen"
+
+#. module: l10n_es_deca_oca
+#: model:ir.model.fields,field_description:l10n_es_deca_oca.field_l10n_es_deca_document__attachment_id
+msgid "PDF file"
+msgstr "Fichero PDF"
+
+#. module: l10n_es_deca_oca
+#: model:ir.model.fields,field_description:l10n_es_deca_oca.field_l10n_es_deca_document__picking_id
+#: model:ir.model.fields,field_description:l10n_es_deca_oca.field_l10n_es_deca_update__picking_id
+msgid "Picking"
+msgstr "Albarán"
+
+#. module: l10n_es_deca_oca
+#: model:ir.model,name:l10n_es_deca_oca.model_stock_picking_type
+msgid "Picking Type"
+msgstr "Tipo de operación"
+
+#. module: l10n_es_deca_oca
+#: model:ir.model.fields,help:l10n_es_deca_oca.field_stock_picking__deca_trailer_plate
+msgid "Plate of the trailer or semi-trailer, if any."
+msgstr "Matrícula del remolque o semirremolque, si lo hay."
+
+#. module: l10n_es_deca_oca
+#: model:ir.model.fields,help:l10n_es_deca_oca.field_stock_picking__deca_goods_description
+msgid ""
+"Printed on the DeCA. Proposed from the company settings; if empty, the names"
+" of the products are used."
+msgstr "Se imprime en el DeCA. Se propone desde los ajustes de la compañía; si se deja vacío se usan los nombres de los productos."
+
+#. module: l10n_es_deca_oca
+#: model:ir.model.fields,help:l10n_es_deca_oca.field_stock_picking_type__deca_required
+msgid ""
+"Propose the DeCA as required on every transfer of this operation type. It "
+"can still be unticked on each transfer."
+msgstr "Propone el DeCA como requerido en todos los albaranes de este tipo de operación. Se puede desmarcar en cada albarán."
+
+#. module: l10n_es_deca_oca
+#: model:ir.model.fields,help:l10n_es_deca_oca.field_res_company__deca_goods_description
+#: model:ir.model.fields,help:l10n_es_deca_oca.field_res_config_settings__deca_goods_description
+msgid "Proposed as nature of the goods on every delivery requiring a DeCA."
+msgstr "Se propone como naturaleza de la mercancía en todos los albaranes que requieran DeCA."
+
+#. module: l10n_es_deca_oca
+#: model_terms:ir.ui.view,arch_db:l10n_es_deca_oca.report_deca_document
+msgid "QR"
+msgstr "QR"
+
+#. module: l10n_es_deca_oca
+#: model:ir.model.fields,field_description:l10n_es_deca_oca.field_l10n_es_deca_update__change_reason
+msgid "Reason of the change"
+msgstr "Motivo del cambio"
+
+#. module: l10n_es_deca_oca
+#: model:ir.model.fields,help:l10n_es_deca_oca.field_l10n_es_deca_document__change_reason
+msgid "Reason of the change with respect to the previous version."
+msgstr "Motivo del cambio respecto a la versión anterior."
+
+#. module: l10n_es_deca_oca
+#: model_terms:ir.ui.view,arch_db:l10n_es_deca_oca.view_l10n_es_deca_document_form
+msgid "Remarks"
+msgstr "Observaciones"
+
+#. module: l10n_es_deca_oca
+#: model:ir.model,name:l10n_es_deca_oca.model_ir_actions_report
+msgid "Report Action"
+msgstr "Acción de informe"
+
+#. module: l10n_es_deca_oca
+#: model:ir.model.fields,field_description:l10n_es_deca_oca.field_l10n_es_deca_document__shipper_address
+msgid "Shipper Address"
+msgstr "Dirección del cargador"
+
+#. module: l10n_es_deca_oca
+#: model:ir.model.fields,field_description:l10n_es_deca_oca.field_l10n_es_deca_document__shipper_name
+msgid "Shipper Name"
+msgstr "Nombre del cargador"
+
+#. module: l10n_es_deca_oca
+#: model:ir.model.fields,field_description:l10n_es_deca_oca.field_l10n_es_deca_document__shipper_vat
+msgid "Shipper Vat"
+msgstr "NIF del cargador"
+
+#. module: l10n_es_deca_oca
+#: model:ir.model.fields,field_description:l10n_es_deca_oca.field_l10n_es_deca_document__special_authorization
+msgid "Special Authorization"
+msgstr "Autorización especial"
+
+#. module: l10n_es_deca_oca
+#: model:ir.model.fields,field_description:l10n_es_deca_oca.field_l10n_es_deca_update__deca_special_authorization
+#: model:ir.model.fields,field_description:l10n_es_deca_oca.field_stock_picking__deca_special_authorization
+msgid "Special traffic authorisation"
+msgstr "Autorización especial de circulación"
+
+#. module: l10n_es_deca_oca
+#: model:ir.model.fields,help:l10n_es_deca_oca.field_stock_picking__deca_special_authorization
+msgid "Special traffic authorisation required by the vehicle, if any."
+msgstr "Autorización especial de circulación que requiera el vehículo, si procede."
+
+#. module: l10n_es_deca_oca
+#: model:ir.model.constraint,message:l10n_es_deca_oca.constraint_stock_picking_deca_access_token_unique
+msgid "The DeCA access token must be unique."
+msgstr "El token de acceso del DeCA debe ser único."
+
+#. module: l10n_es_deca_oca
+#. odoo-python
+#: code:addons/l10n_es_deca_oca/models/stock_picking.py:0
+msgid ""
+"The DeCA cannot be issued, the following data is missing:\n"
+"%s"
+msgstr ""
+"No se puede emitir el DeCA, faltan los siguientes datos:\n"
+"%s"
+
+#. module: l10n_es_deca_oca
+#: model_terms:ir.ui.view,arch_db:l10n_es_deca_oca.view_l10n_es_deca_update_form
+msgid ""
+"The DeCA of this transfer is already issued. The changes will be printed on "
+"a new version, together with the reason, and the previous values will be "
+"shown struck through. The QR code and the download URL do not change."
+msgstr "El DeCA de este albarán ya está emitido. Los cambios se imprimirán en una nueva versión junto con el motivo, y los valores anteriores aparecerán tachados. El código QR y la URL de descarga no cambian."
+
+#. module: l10n_es_deca_oca
+#. odoo-python
+#: code:addons/l10n_es_deca_oca/controllers/main.py:0
+msgid "This DeCA is no longer available for download."
+msgstr "Este DeCA ya no está disponible para su descarga."
+
+#. module: l10n_es_deca_oca
+#: model_terms:ir.ui.view,arch_db:l10n_es_deca_oca.view_picking_form_inherit_deca
+msgid ""
+"This delivery requires a DeCA that has not been issued yet. The driver must "
+"carry it, with its QR code, before the transport starts."
+msgstr "Este albarán requiere un DeCA que todavía no se ha emitido. El conductor debe llevarlo, con su código QR, antes del inicio del transporte."
+
+#. module: l10n_es_deca_oca
+#: model:ir.model.fields,field_description:l10n_es_deca_oca.field_l10n_es_deca_document__trailer_plate
+msgid "Trailer Plate"
+msgstr "Matrícula del remolque"
+
+#. module: l10n_es_deca_oca
+#: model:ir.model.fields,field_description:l10n_es_deca_oca.field_l10n_es_deca_update__deca_trailer_plate
+#: model:ir.model.fields,field_description:l10n_es_deca_oca.field_stock_picking__deca_trailer_plate
+msgid "Trailer plate"
+msgstr "Matrícula del remolque"
+
+#. module: l10n_es_deca_oca
+#: model:ir.model,name:l10n_es_deca_oca.model_stock_picking
+#: model_terms:ir.ui.view,arch_db:l10n_es_deca_oca.view_l10n_es_deca_document_search
+msgid "Transfer"
+msgstr "Albarán"
+
+#. module: l10n_es_deca_oca
+#: model_terms:ir.ui.view,arch_db:l10n_es_deca_oca.view_picking_form_inherit_deca
+msgid "Transport"
+msgstr "Transporte"
+
+#. module: l10n_es_deca_oca
+#: model:ir.model.fields,field_description:l10n_es_deca_oca.field_l10n_es_deca_document__transport_date
+msgid "Transport Date"
+msgstr "Fecha del transporte"
+
+#. module: l10n_es_deca_oca
+#: model:ir.actions.act_window,name:l10n_es_deca_oca.action_l10n_es_deca_update
+#: model_terms:ir.ui.view,arch_db:l10n_es_deca_oca.view_picking_form_inherit_deca
+msgid "Update DeCA"
+msgstr "Actualizar DeCA"
+
+#. module: l10n_es_deca_oca
+#: model:ir.model,name:l10n_es_deca_oca.model_l10n_es_deca_update
+msgid "Update an issued DeCA"
+msgstr "Actualizar un DeCA emitido"
+
+#. module: l10n_es_deca_oca
+#: model:ir.model.fields,field_description:l10n_es_deca_oca.field_l10n_es_deca_document__vehicle_plate
+msgid "Vehicle Plate"
+msgstr "Matrícula del vehículo"
+
+#. module: l10n_es_deca_oca
+#. odoo-python
+#: code:addons/l10n_es_deca_oca/models/stock_picking.py:0
+#: model:ir.model.fields,field_description:l10n_es_deca_oca.field_l10n_es_deca_update__deca_vehicle_plate
+#: model:ir.model.fields,field_description:l10n_es_deca_oca.field_stock_picking__deca_vehicle_plate
+msgid "Vehicle plate"
+msgstr "Matrícula del vehículo"
+
+#. module: l10n_es_deca_oca
+#: model:ir.model.fields,field_description:l10n_es_deca_oca.field_l10n_es_deca_document__version
+msgid "Version"
+msgstr "Versión"
+
+#. module: l10n_es_deca_oca
+#: model:ir.model.fields,help:l10n_es_deca_oca.field_stock_picking__deca_required
+msgid ""
+"Whether this delivery needs an electronic administrative control document "
+"(DeCA). Proposed from the operation type."
+msgstr "Indica si este albarán necesita un documento electrónico de control administrativo (DeCA). Se propone desde el tipo de operación."
+
+#. module: l10n_es_deca_oca
+#: model_terms:ir.ui.view,arch_db:l10n_es_deca_oca.view_l10n_es_deca_update_form
+msgid "e.g. Tractor unit replaced after a breakdown"
+msgstr "p. ej. Cambio de tractora por avería"

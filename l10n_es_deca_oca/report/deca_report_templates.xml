@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2026 Abraham Anes - abraham@tesseratech.es
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
+
+     The DeCA is a Spanish legal document addressed to the Spanish transport
+     inspection, so its labels are printed in Spanish regardless of the user
+     language. -->
+<odoo>
+    <template id="report_deca">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="l10n_es_deca_oca.report_deca_document" />
+            </t>
+        </t>
+    </template>
+
+    <!-- Values of previous versions that were superseded, struck through -->
+    <template id="report_deca_history">
+        <t t-if="doc" t-foreach="doc._get_previous_values(field_name)" t-as="previous">
+            <div class="text-muted small">
+                <s t-out="previous" />
+            </div>
+        </t>
+    </template>
+
+    <template id="report_deca_document">
+        <t t-set="doc" t-value="o.deca_current_document_id" />
+        <t t-call="web.external_layout">
+            <div class="page">
+                <div class="row mb-3" name="deca_header">
+                    <div class="col-9">
+                        <h3
+                            class="mb-0"
+                            t-translation="off"
+                        >Documento electrónico de Control Administrativo</h3>
+                        <div
+                            class="text-muted"
+                            t-translation="off"
+                        >DeCA · Orden FOM/2861/2012 · Resolución de 5 de junio de 2026</div>
+                        <div class="mt-3">
+                            <strong t-translation="off">Referencia:</strong>
+                            <span t-field="o.name" />
+                            <t t-if="o.origin">
+                                · <strong t-translation="off">Ref. externa:</strong>
+                                <span t-field="o.origin" />
+                            </t>
+                        </div>
+                        <div t-if="doc">
+                            <strong t-translation="off">Versión:</strong>
+                            <span t-out="doc.version" />
+                            · <strong t-translation="off">Emitido el:</strong>
+                            <span
+                            t-field="doc.date"
+                            t-options='{"widget": "datetime", "format": "dd/MM/yyyy HH:mm"}'
+                        />
+                            <t t-if="doc.version > 1">
+                                <t
+                            t-set="first_doc"
+                            t-value="o.deca_document_ids.sorted('version')[:1]"
+                        />
+                                · <strong t-translation="off">Primera emisión:</strong>
+                                <span
+                            t-field="first_doc.date"
+                            t-options='{"widget": "datetime", "format": "dd/MM/yyyy HH:mm"}'
+                        />
+                            </t>
+                        </div>
+                        <div t-if="doc and doc.change_reason" name="deca_change_reason">
+                            <strong t-translation="off">Motivo del cambio:</strong>
+                            <span t-out="doc.change_reason" />
+                        </div>
+                    </div>
+                    <div
+                        class="col-3 text-end"
+                        t-if="doc and o.deca_url"
+                        name="deca_qr"
+                    >
+                        <img
+                            t-att-src="o._deca_get_qr_src()"
+                            style="width: 38mm; height: 38mm;"
+                            alt="QR"
+                        />
+                        <div
+                            class="text-muted small"
+                            t-translation="off"
+                        >Escanee el QR para descargar el DeCA</div>
+                    </div>
+                </div>
+
+                <div
+                    t-if="not doc"
+                    class="alert alert-warning"
+                    role="alert"
+                    t-translation="off"
+                >
+                    DeCA no emitido. Complete los datos de transporte y emita el DeCA antes del inicio del servicio.
+                </div>
+
+                <t t-if="doc">
+                    <div class="row" name="deca_parties">
+                        <div class="col-6">
+                            <h5
+                                class="border-bottom pb-1"
+                                t-translation="off"
+                            >Cargador contractual</h5>
+                            <div>
+                                <strong t-out="doc.shipper_name" />
+                            </div>
+                            <div>
+                                <span t-translation="off">NIF: </span>
+                                <span t-out="doc.shipper_vat" />
+                            </div>
+                            <div
+                                t-out="doc.shipper_address"
+                                t-options='{"widget": "text"}'
+                            />
+                        </div>
+                        <div class="col-6">
+                            <h5
+                                class="border-bottom pb-1"
+                                t-translation="off"
+                            >Transportista efectivo</h5>
+                            <div>
+                                <strong t-out="doc.carrier_name" />
+                                <t t-set="field_name" t-value="'carrier_name'" />
+                                <t t-call="l10n_es_deca_oca.report_deca_history" />
+                            </div>
+                            <div>
+                                <span t-translation="off">NIF: </span>
+                                <span t-out="doc.carrier_vat" />
+                                <t t-set="field_name" t-value="'carrier_vat'" />
+                                <t t-call="l10n_es_deca_oca.report_deca_history" />
+                            </div>
+                            <div
+                                t-out="doc.carrier_address"
+                                t-options='{"widget": "text"}'
+                            />
+                        </div>
+                    </div>
+
+                    <div class="row mt-3" name="deca_places">
+                        <div class="col-6">
+                            <h5
+                                class="border-bottom pb-1"
+                                t-translation="off"
+                            >Lugar de origen</h5>
+                            <div
+                                t-out="doc.origin_address"
+                                t-options='{"widget": "text"}'
+                            />
+                        </div>
+                        <div class="col-6">
+                            <h5
+                                class="border-bottom pb-1"
+                                t-translation="off"
+                            >Lugar de destino</h5>
+                            <div>
+                                <strong t-out="doc.destination_name" />
+                            </div>
+                            <div
+                                t-out="doc.destination_address"
+                                t-options='{"widget": "text"}'
+                            />
+                        </div>
+                    </div>
+
+                    <div class="row mt-3" name="deca_vehicle">
+                        <div class="col-3">
+                            <div
+                                class="text-muted small"
+                                t-translation="off"
+                            >Matrícula del vehículo</div>
+                            <div class="fw-bold" t-out="doc.vehicle_plate" />
+                            <t t-set="field_name" t-value="'vehicle_plate'" />
+                            <t t-call="l10n_es_deca_oca.report_deca_history" />
+                        </div>
+                        <div class="col-3">
+                            <div
+                                class="text-muted small"
+                                t-translation="off"
+                            >Matrícula del remolque</div>
+                            <div class="fw-bold" t-out="doc.trailer_plate or '-'" />
+                            <t t-set="field_name" t-value="'trailer_plate'" />
+                            <t t-call="l10n_es_deca_oca.report_deca_history" />
+                        </div>
+                        <div class="col-3">
+                            <div
+                                class="text-muted small"
+                                t-translation="off"
+                            >Conductor</div>
+                            <div t-out="doc.driver_name or '-'" />
+                            <t t-set="field_name" t-value="'driver_name'" />
+                            <t t-call="l10n_es_deca_oca.report_deca_history" />
+                        </div>
+                        <div class="col-3">
+                            <div
+                                class="text-muted small"
+                                t-translation="off"
+                            >Fecha del transporte</div>
+                            <div
+                                class="fw-bold"
+                                t-field="doc.transport_date"
+                                t-options='{"widget": "date", "format": "dd/MM/yyyy"}'
+                            />
+                            <t t-set="field_name" t-value="'transport_date'" />
+                            <t t-call="l10n_es_deca_oca.report_deca_history" />
+                        </div>
+                    </div>
+
+                    <div class="row mt-3" name="deca_goods">
+                        <div class="col-9">
+                            <div
+                                class="text-muted small"
+                                t-translation="off"
+                            >Naturaleza de la mercancía</div>
+                            <div
+                                t-out="doc.goods_description"
+                                t-options='{"widget": "text"}'
+                            />
+                            <t t-set="field_name" t-value="'goods_description'" />
+                            <t t-call="l10n_es_deca_oca.report_deca_history" />
+                        </div>
+                        <div class="col-3">
+                            <div
+                                class="text-muted small"
+                                t-translation="off"
+                            >Peso bruto (kg)</div>
+                            <div class="fw-bold" t-field="doc.gross_weight" />
+                            <t t-set="field_name" t-value="'gross_weight'" />
+                            <t t-call="l10n_es_deca_oca.report_deca_history" />
+                        </div>
+                    </div>
+
+                    <div class="row mt-3" name="deca_remarks">
+                        <div class="col-6">
+                            <div
+                                class="text-muted small"
+                                t-translation="off"
+                            >Autorización especial de circulación</div>
+                            <div
+                                t-out="doc.special_authorization or '-'"
+                                t-options='{"widget": "text"}'
+                            />
+                            <t t-set="field_name" t-value="'special_authorization'" />
+                            <t t-call="l10n_es_deca_oca.report_deca_history" />
+                        </div>
+                        <div class="col-6">
+                            <div
+                                class="text-muted small"
+                                t-translation="off"
+                            >Observaciones</div>
+                            <div
+                                t-out="doc.notes or '-'"
+                                t-options='{"widget": "text"}'
+                            />
+                            <t t-set="field_name" t-value="'notes'" />
+                            <t t-call="l10n_es_deca_oca.report_deca_history" />
+                        </div>
+                    </div>
+
+                    <p
+                        t-if="doc.version > 1"
+                        class="text-muted small"
+                        t-translation="off"
+                    >
+                        Los valores tachados corresponden a versiones anteriores del documento y han sido
+                        sustituidos por los indicados encima.
+                    </p>
+                </t>
+            </div>
+        </t>
+    </template>
+</odoo>

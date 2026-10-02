@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2026 Abraham Anes - abraham@tesseratech.es
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html). -->
+<odoo>
+    <record id="view_l10n_es_deca_update_form" model="ir.ui.view">
+        <field name="name">l10n_es.deca.update.form</field>
+        <field name="model">l10n_es.deca.update</field>
+        <field name="arch" type="xml">
+            <form>
+                <div class="alert alert-info" role="alert">
+                    The DeCA of this transfer is already issued. The changes will be printed on a new version, together with the reason, and the previous values will be shown struck through. The QR code and the download URL do not change.
+                </div>
+                <group>
+                    <group name="transport">
+                        <field name="picking_id" invisible="1" />
+                        <field name="deca_carrier_partner_id" />
+                        <field name="deca_driver_name" />
+                        <field name="deca_vehicle_plate" />
+                        <field name="deca_trailer_plate" />
+                    </group>
+                    <group name="goods">
+                        <field name="deca_gross_weight" />
+                        <field name="deca_goods_description" />
+                    </group>
+                </group>
+                <group>
+                    <field name="deca_special_authorization" />
+                    <field name="deca_notes" />
+                    <field
+                        name="change_reason"
+                        placeholder="e.g. Tractor unit replaced after a breakdown"
+                    />
+                </group>
+                <footer>
+                    <button
+                        name="action_confirm"
+                        type="object"
+                        string="Issue new version"
+                        class="btn-primary"
+                        data-hotkey="q"
+                    />
+                    <button string="Cancel" special="cancel" data-hotkey="x" />
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_l10n_es_deca_update" model="ir.actions.act_window">
+        <field name="name">Update DeCA</field>
+        <field name="res_model">l10n_es.deca.update</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+        <field name="binding_model_id" eval="False" />
+    </record>
+</odoo>
